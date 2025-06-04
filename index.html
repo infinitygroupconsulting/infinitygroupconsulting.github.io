@@ -1,6 +1,677 @@
-<p>Hello 大家好</p>
-<p>我是林奕言，這是我的個人網站。</p>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龍脈風水諮詢 - 傳承千年智慧的現代風水服務</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2B48C;
+            --accent: #C19A6B;
+            --light: #F5F5DC;
+            --dark: #3C2A1E;
+            --gold: #D4AF37;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23D2B48C" stroke-width="0.5" opacity="0.3"/></svg>');
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 導航欄樣式 */
+        header {
+            background: linear-gradient(to bottom, var(--primary), var(--dark));
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+        
+        .logo-text {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2rem;
+            color: var(--light);
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            background-color: rgba(210, 180, 140, 0.3);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        nav a:hover::after {
+            width: 70%;
+        }
+        
+        /* 英雄區域樣式 */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(60, 42, 30, 0.7), rgba(60, 42, 30, 0.7)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--gold), #B8860B);
+            color: var(--dark);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* 章節樣式 */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--accent);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* 公司簡介 */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 創辦人簡介 */
+        .founder-section {
+            background: linear-gradient(to bottom, var(--secondary), var(--light));
+        }
+        
+        .founder-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .founder-image {
+            flex: 1;
+            border: 10px solid var(--light);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .founder-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .founder-info {
+            flex: 1.5;
+        }
+        
+        .founder-name {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .founder-title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .founder-quote {
+            font-style: italic;
+            padding: 20px;
+            border-left: 4px solid var(--gold);
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        /* 服務項目 */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            height: 180px;
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--gold);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* 頁腳樣式 */
+        footer {
+            background: linear-gradient(to bottom, var(--dark), #1a120b);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--gold);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+        
+        /* 響應式設計 */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .about-content, .founder-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航欄 -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-yin-yang"></i>
+                <div class="logo-text">龍脈風水</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-building"></i> 公司簡介</a></li>
+                    <li><a href="#founder"><i class="fas fa-user"></i> 創辦人簡介</a></li>
+                    <li><a href="#services"><i class="fas fa-fengshui"></i> 服務項目</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<ul>
-  <li><a href="https://www.infinitygroupconsulting.com/"></a></li>
-</ul>
+    <!-- 英雄區域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>龍脈風水諮詢</h1>
+            <p>傳承千年智慧，創造和諧空間，提升事業財運與家庭幸福</p>
+            <a href="#contact" class="cta-button">預約專業諮詢 <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- 公司簡介 -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">公司簡介</h2>
+                <p class="section-subtitle">融合傳統智慧與現代科學，為您打造和諧的生活與事業空間</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>關於龍脈風水</h3>
+                    <p>龍脈風水諮詢有限公司成立於2005年，由國際知名風水大師李雲天教授創立。我們致力於將傳統風水智慧與現代環境科學相結合，為個人、家庭和企業提供專業的風水布局與環境優化解決方案。</p>
+                    <p>公司團隊由多位經驗豐富的風水師、環境設計師和易經專家組成，擁有超過20年的行業經驗。我們已成功服務超過5,000位客戶，包括眾多知名企業和高端住宅項目。</p>
+                    <p>我們的核心價值觀是：專業、誠信、創新、和諧。我們相信良好的環境能量能為人們帶來健康、財富和幸福，並致力於創造人與自然和諧共生的空間。</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1096&q=80" alt="風水諮詢辦公室">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 創辦人簡介 -->
+    <section id="founder" class="section founder-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">創辦人簡介</h2>
+                <p class="section-subtitle">國際風水大師李雲天教授的傳承與創新</p>
+            </div>
+            <div class="founder-content">
+                <div class="founder-image">
+                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1071&q=80" alt="李雲天教授">
+                </div>
+                <div class="founder-info">
+                    <h3 class="founder-name">李雲天 教授</h3>
+                    <p class="founder-title">國際風水大師 | 易經研究專家 | 環境能量學創始人</p>
+                    <p>李雲天教授出生於風水世家，自幼跟隨祖父學習傳統風水術，擁有超過40年的風水實踐經驗。畢業於北京大學建築系，後赴英國劍橋大學深造環境心理學，將東方風水智慧與西方環境科學完美結合。</p>
+                    <p>李教授曾為多家世界500強企業提供風水顧問服務，包括總部大樓選址、辦公室布局和商業空間設計。他的著作《現代風水與環境能量》被翻譯成12種語言，在全球銷售超過100萬冊。</p>
+                    <div class="founder-quote">
+                        <p>"風水不是迷信，而是人與環境和諧共處的科學。我們致力於幫助人們創造能量流動順暢的空間，讓生活更美好，事業更成功。"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服務項目 -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">服務項目</h2>
+                <p class="section-subtitle">專業風水服務，涵蓋住宅、商業與個人發展各個領域</p>
+            </div>
+            <div class="services-grid">
+                <!-- 服務項目1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">住宅風水布局</h3>
+                        <p>專業住宅風水評估與布局，優化家居能量流動，提升家庭和諧、健康與財運。</p>
+                    </div>
+                </div>
+                
+                <!-- 服務項目2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">商業空間規劃</h3>
+                        <p>企業辦公室、商鋪、工廠風水規劃，促進業務發展，提升財運與員工效率。</p>
+                    </div>
+                </div>
+                
+                <!-- 服務項目3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">建築選址評估</h3>
+                        <p>專業建築選址風水評估，確保項目符合地理能量，創造長期繁榮基礎。</p>
+                    </div>
+                </div>
+                
+                <!-- 服務項目4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">人生運勢規劃</h3>
+                        <p>結合生辰八字與流年運勢，提供個人發展方向、事業規劃與重要決策建議。</p>
+                    </div>
+                </div>
+                
+                <!-- 服務項目5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">婚姻感情諮詢</h3>
+                        <p>分析八字合婚，提供感情發展建議，改善夫妻關係，促進家庭和諧。</p>
+                    </div>
+                </div>
+                
+                <!-- 服務項目6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">學業文昌布局</h3>
+                        <p>優化學習環境，提升專注力與學業運勢，助力考試成功與學術成就。</p>
+                    </div>
+                </div>
+                
+                <!-- 服務項目7 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">健康風水調理</h3>
+                        <p>識別影響健康的風水因素，提供環境改善方案，促進身心靈平衡。</p>
+                    </div>
+                </div>
+                
+                <!-- 服務項目8 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-yin-yang"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">能量淨化服務</h3>
+                        <p>專業空間淨化與能量提升，清除負面能量，創造積極和諧的生活環境。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>龍脈風水</h3>
+                    <p>傳承千年智慧，創造和諧空間，提升事業財運與家庭幸福。專業風水服務，為您的人生保駕護航。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>服務項目</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 住宅風水布局</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 商業空間規劃</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 建築選址評估</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 人生運勢規劃</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>聯絡我們</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 台北市信義區松仁路123號</a></li>
+                        <li><a href="tel:+886223456789"><i class="fas fa-phone"></i> (02) 2345-6789</a></li>
+                        <li><a href="mailto:info@longmaifengshui.com"><i class="fas fa-envelope"></i> info@longmaifengshui.com</a></li>
+                        <li><a href="#"><i class="fas fa-calendar-check"></i> 預約諮詢</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>營業時間</h3>
+                    <ul class="footer-links">
+                        <li><i class="far fa-clock"></i> 週一至週五: 9:00 - 18:00</li>
+                        <li><i class="far fa-clock"></i> 週六: 10:00 - 16:00</li>
+                        <li><i class="far fa-clock"></i> 週日及國定假日: 休息</li>
+                        <li><a href="#"><i class="fas fa-external-link-alt"></i> 立即預約</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>Copyright &copy; 2023 龍脈風水諮詢有限公司. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
