@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>龍脈風水諮詢 - 傳承千年智慧的現代風水服務</title>
+    <title>玄極風水命理集團 - 專業風水命理服務</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -46,23 +46,36 @@
             z-index: 100;
         }
         
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
             gap: 15px;
         }
         
-        .logo i {
-            font-size: 2.5rem;
-            color: var(--gold);
+        .logo {
+            height: 60px;
+            width: auto;
         }
         
         .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chinese-name {
             font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--light);
             letter-spacing: 3px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+        
+        .english-name {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            letter-spacing: 1px;
+            margin-top: 3px;
         }
         
         .nav-container {
@@ -218,11 +231,17 @@
             color: var(--primary);
         }
         
+        .about-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
         .about-image {
             flex: 1;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
         
         .about-image img {
@@ -253,6 +272,7 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            position: relative;
         }
         
         .founder-image img {
@@ -278,6 +298,11 @@
             margin-bottom: 20px;
         }
         
+        .founder-info p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
         .founder-quote {
             font-style: italic;
             padding: 20px;
@@ -300,6 +325,7 @@
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .service-card:hover {
@@ -325,6 +351,27 @@
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .service-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .service-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .service-list li::before {
+            content: "•";
+            color: var(--gold);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
         }
         
         /* 頁腳樣式 */
@@ -379,6 +426,22 @@
         .footer-links a:hover {
             color: var(--gold);
             transform: translateX(5px);
+        }
+        
+        .address-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .address-title {
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .social-links {
@@ -448,15 +511,31 @@
                 font-size: 2.5rem;
             }
         }
+        
+        /* 服務類別標籤 */
+        .service-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
     <!-- 導航欄 -->
     <header>
         <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-yin-yang"></i>
-                <div class="logo-text">龍脈風水</div>
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/60x60/8B4513/FFFFFF?text=LOGO" alt="玄極風水命理集團" class="logo">
+                <div class="logo-text">
+                    <div class="chinese-name">玄極風水命理集團</div>
+                    <div class="english-name">INFINITY GROUP CONSULTING</div>
+                </div>
             </div>
             <nav>
                 <ul>
@@ -472,8 +551,8 @@
     <!-- 英雄區域 -->
     <section class="hero">
         <div class="hero-content">
-            <h1>龍脈風水諮詢</h1>
-            <p>傳承千年智慧，創造和諧空間，提升事業財運與家庭幸福</p>
+            <h1>玄極風水命理集團</h1>
+            <p>專業風水命理服務，融合傳統智慧與現代生活</p>
             <a href="#contact" class="cta-button">預約專業諮詢 <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
@@ -487,13 +566,17 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>關於龍脈風水</h3>
-                    <p>龍脈風水諮詢有限公司成立於2005年，由國際知名風水大師李雲天教授創立。我們致力於將傳統風水智慧與現代環境科學相結合，為個人、家庭和企業提供專業的風水布局與環境優化解決方案。</p>
-                    <p>公司團隊由多位經驗豐富的風水師、環境設計師和易經專家組成，擁有超過20年的行業經驗。我們已成功服務超過5,000位客戶，包括眾多知名企業和高端住宅項目。</p>
-                    <p>我們的核心價值觀是：專業、誠信、創新、和諧。我們相信良好的環境能量能為人們帶來健康、財富和幸福，並致力於創造人與自然和諧共生的空間。</p>
+                    <h3>關於玄極風水命理集團</h3>
+                    <p>「集團」意指「顧問團」，聯合幾位資深的玄學師傅。師傅們專業於傳統學理並保持與時並進，是以能提供受眾廣的服務與符合實際狀況的建議。</p>
+                    <p>廣大的服務主要分三大類：</p>
+                    <p><strong>「風水」</strong>包括：商宅風水、陽宅風水、陰宅風水、生基風水</p>
+                    <p><strong>「易數」</strong>包括：八字命理、嬰兒起名、成人改名、數字擇吉、冥想三勝宮</p>
+                    <p><strong>「擇吉」</strong>包括：新屋擇吉、良地擇吉、問事、吉日吉時擇吉（嫁娶、入宅、產子等等）</p>
+                    <p>師傅也會定期開班授課，主要課程為「八字」、「奇門遁甲」。</p>
+                    <p>「玄極風水命理集團」，旨在「真誠」、「專業」、「與時並進」- 為本的理念，「伴隨」、「及時」、「解惑」 - 給您的體驗，「安心」、「無憂」 - 趨吉避諱。</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1096&q=80" alt="風水諮詢辦公室">
+                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1096&q=80" alt="玄極風水命理集團">
                 </div>
             </div>
         </div>
@@ -504,20 +587,22 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">創辦人簡介</h2>
-                <p class="section-subtitle">國際風水大師李雲天教授的傳承與創新</p>
+                <p class="section-subtitle">林奕言 Randolph Lim 的玄學傳承與實踐</p>
             </div>
             <div class="founder-content">
                 <div class="founder-image">
-                    <img src="founder.jpeg" alt="林奕言">
+                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1071&q=80" alt="林奕言 Randolph Lim">
                 </div>
                 <div class="founder-info">
-                    <h3 class="founder-name">林奕言</h3>
-                    <p class="founder-title">國際風水大師 | 易經研究專家 | 環境能量學創始人</p>
-                    <p>姓「林」，冠字「奕言」。 1984年出生於馬來西亞柔佛州， 生於六口清寒之家，全賴母親勤懇持家， 此為命理中「印星護命」之初始印證。 幼承華小教育，獨中六年淬鍊， 深植易理之基，中華文化之傳承與薰陶。 完成基礎學業後，為求生計而前往新加坡， 入行娛樂業10餘載， 於行業中各式各樣的接觸中，觀盡人性貧富與人生百態。生於80年代， 時值「三元九運」中的下元八運艮土當值， 年代的特性孕育了務實、真誠的性格品質。 故為人秉持真誠待人並從一而終， 嚴謹的學習與踐行玄學的易理。  正式接觸玄學之始於20年前（2005年）， 有幸於南馬風水名家「羅一鳴」師傅旗下的「龍岩風水學院」，完成「風水堪輿」的知識傳承。
-於後深研命理學「子平八字」、戰略學「奇門遁甲」、「易經數字學」、「擇日學」、「命名學」等各類玄學傳承。 並有幸伴隨資深師傅長期闖南走北， 在眾多實例中去印證「陽宅風水」、「陰宅風水」的「佈局」對人生所帶來的影響，以及各門玄學知識的應用範圍。 並於2023年，
-就新加坡創立專業顧問公司「玄極風水命理集團」。</p>
+                    <h3 class="founder-name">林奕言 Randolph Lim</h3>
+                    <p class="founder-title">玄學大師 | 玄極風水命理集團創辦人</p>
+                    <p>姓「林」，冠字「奕言」。1984年出生於馬來西亞柔佛州，生於六口清寒之家，全賴母親勤懇持家，此為命理中「印星護命」之初始印證。</p>
+                    <p>幼承華小教育，獨中六年淬鍊，深植易理之基，中華文化之傳承與薰陶。完成基礎學業後，為求生計而前往新加坡，入行娛樂業10餘載，於行業中各式各樣的接觸中，觀盡人性貧富與人生百態。</p>
+                    <p>生於80年代，時值「三元九運」中的下元八運艮土當值，年代的特性孕育了務實、真誠的性格品質。故為人秉持真誠待人並從一而終，嚴謹的學習與踐行玄學的易理。</p>
+                    <p>正式接觸玄學之始於20年前（2005年），有幸於南馬風水名家「羅一鳴」師傅旗下的「龍岩風水學院」，完成「風水堪輿」的知識傳承。於後深研命理學「子平八字」、戰略學「奇門遁甲」、「易經數字學」、「擇日學」、「命名學」等各類玄學傳承。</p>
+                    <p>並有幸伴隨資深師傅長期闖南走北，在眾多實例中去印證「陽宅風水」、「陰宅風水」的「佈局」對人生所帶來的影響，以及各門玄學知識的應用範圍。並於2023年，就新加坡創立專業顧問公司「玄極風水命理集團」。</p>
                     <div class="founder-quote">
-                        <p>"「玄極風水命理集團」，旨在 「真誠」、「專業」、「與時並進」- 為本的理念 「伴隨」、「及時」、「解惑」 - 給您的體驗 「安心」、「無憂」 - 趨吉避諱"</p>
+                        <p>"玄學不是迷信，而是古人智慧的結晶，是解讀宇宙規律的鑰匙。我們致力於將這份智慧應用於現代生活，幫助人們創造更和諧的環境與人生。"</p>
                     </div>
                 </div>
             </div>
@@ -529,94 +614,75 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">服務項目</h2>
-                <p class="section-subtitle">專業風水服務，涵蓋住宅、商業與個人發展各個領域</p>
+                <p class="section-subtitle">專業風水命理服務，涵蓋四大領域</p>
             </div>
             <div class="services-grid">
-                <!-- 服務項目1 -->
+                <!-- 風水服務 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">住宅風水布局</h3>
-                        <p>專業住宅風水評估與布局，優化家居能量流動，提升家庭和諧、健康與財運。</p>
-                    </div>
-                </div>
-                
-                <!-- 服務項目2 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">商業空間規劃</h3>
-                        <p>企業辦公室、商鋪、工廠風水規劃，促進業務發展，提升財運與員工效率。</p>
-                    </div>
-                </div>
-                
-                <!-- 服務項目3 -->
-                <div class="service-card">
+                    <div class="service-category">風水</div>
                     <div class="service-icon">
                         <i class="fas fa-mountain"></i>
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">建築選址評估</h3>
-                        <p>專業建築選址風水評估，確保項目符合地理能量，創造長期繁榮基礎。</p>
+                        <h3 class="service-title">風水服務</h3>
+                        <ul class="service-list">
+                            <li>商宅風水</li>
+                            <li>陽宅風水</li>
+                            <li>陰宅風水</li>
+                            <li>生基風水</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <!-- 服務項目4 -->
+                <!-- 易數服務 -->
                 <div class="service-card">
+                    <div class="service-category">易數</div>
                     <div class="service-icon">
-                        <i class="fas fa-route"></i>
+                        <i class="fas fa-calculator"></i>
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">人生運勢規劃</h3>
-                        <p>結合生辰八字與流年運勢，提供個人發展方向、事業規劃與重要決策建議。</p>
+                        <h3 class="service-title">易數服務</h3>
+                        <ul class="service-list">
+                            <li>八字命理</li>
+                            <li>嬰兒起名</li>
+                            <li>成人改名</li>
+                            <li>數字擇吉</li>
+                            <li>冥想三勝宮</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <!-- 服務項目5 -->
+                <!-- 擇吉服務 -->
                 <div class="service-card">
+                    <div class="service-category">擇吉</div>
                     <div class="service-icon">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-calendar-check"></i>
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">婚姻感情諮詢</h3>
-                        <p>分析八字合婚，提供感情發展建議，改善夫妻關係，促進家庭和諧。</p>
+                        <h3 class="service-title">擇吉服務</h3>
+                        <ul class="service-list">
+                            <li>新屋擇吉</li>
+                            <li>良地擇吉</li>
+                            <li>問事</li>
+                            <li>吉日吉時擇吉（嫁娶、入宅、產子等）</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <!-- 服務項目6 -->
+                <!-- 授課服務 -->
                 <div class="service-card">
+                    <div class="service-category">授課</div>
                     <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">學業文昌布局</h3>
-                        <p>優化學習環境，提升專注力與學業運勢，助力考試成功與學術成就。</p>
-                    </div>
-                </div>
-                
-                <!-- 服務項目7 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">健康風水調理</h3>
-                        <p>識別影響健康的風水因素，提供環境改善方案，促進身心靈平衡。</p>
-                    </div>
-                </div>
-                
-                <!-- 服務項目8 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-yin-yang"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">能量淨化服務</h3>
-                        <p>專業空間淨化與能量提升，清除負面能量，創造積極和諧的生活環境。</p>
+                        <h3 class="service-title">專業課程</h3>
+                        <ul class="service-list">
+                            <li>八字命理課程</li>
+                            <li>奇門遁甲課程</li>
+                            <li>風水基礎班</li>
+                            <li>易經研討班</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -628,8 +694,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>龍脈風水</h3>
-                    <p>傳承千年智慧，創造和諧空間，提升事業財運與家庭幸福。專業風水服務，為您的人生保駕護航。</p>
+                    <h3>玄極風水命理集團</h3>
+                    <p>INFINITY GROUP CONSULTING</p>
+                    <p>專業風水命理服務，融合傳統智慧與現代生活，為您創造和諧環境與美好人生。</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -641,36 +708,51 @@
                 <div class="footer-column">
                     <h3>服務項目</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 住宅風水布局</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 商業空間規劃</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 建築選址評估</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 人生運勢規劃</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 風水服務</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 易數服務</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 擇吉服務</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 專業課程</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>聯絡我們</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 台北市信義區松仁路123號</a></li>
-                        <li><a href="tel:+886223456789"><i class="fas fa-phone"></i> (02) 2345-6789</a></li>
-                        <li><a href="mailto:info@longmaifengshui.com"><i class="fas fa-envelope"></i> info@longmaifengshui.com</a></li>
-                        <li><a href="#"><i class="fas fa-calendar-check"></i> 預約諮詢</a></li>
-                    </ul>
+                    <div class="address-block">
+                        <div class="address-title">
+                            <i class="fas fa-map-marker-alt"></i> 馬來西亞辦事處
+                        </div>
+                        <p>INFINITY GROUP CONSULTING</p>
+                        <p>NO. 18-01, JALAN AUSTIN HEIGHTS 7/7,</p>
+                        <p>TAMAN MOUNT AUSTIN,</p>
+                        <p>81100 JOHOR BAHRU, JOHOR, Malaysia</p>
+                    </div>
+                    
+                    <div class="address-block">
+                        <div class="address-title">
+                            <i class="fas fa-map-marker-alt"></i> 新加坡辦事處
+                        </div>
+                        <p>Magnetism group consulting</p>
+                        <p>Blk985B, Buangkok Crescent #11-24,</p>
+                        <p>532985 Singapore</p>
+                    </div>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>營業時間</h3>
+                    <h3>聯絡方式</h3>
                     <ul class="footer-links">
-                        <li><i class="far fa-clock"></i> 週一至週五: 9:00 - 18:00</li>
-                        <li><i class="far fa-clock"></i> 週六: 10:00 - 16:00</li>
-                        <li><i class="far fa-clock"></i> 週日及國定假日: 休息</li>
-                        <li><a href="#"><i class="fas fa-external-link-alt"></i> 立即預約</a></li>
+                        <li><a href="tel:+6019-9853149"><i class="fas fa-phone"></i> +6019-985 3149</a></li>
+                        <li><a href="https://wa.me/6597287886"><i class="fab fa-whatsapp"></i> +65 9728 7886 (WhatsApp)</a></li>
+                        <li><a href="https://wa.me/601159141495"><i class="fab fa-whatsapp"></i> +6011 5914 1495 (WhatsApp)</a></li>
+                        <li><a href="mailto:info@infinitygroup.com"><i class="fas fa-envelope"></i> info@infinitygroup.com</a></li>
                     </ul>
+                    
+                    <h3 style="margin-top: 20px;">營業時間</h3>
+                    <p>僅限預約</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>Copyright &copy; 2023 龍脈風水諮詢有限公司. All Rights Reserved.</p>
+                <p>Copyright © 2025 Infinity Group consulting. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
