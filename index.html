@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>玄極風水 - 專業風水命理服務</title>
+    <title>玄極風水命理集團 | INFINITY GROUP CONSULTING</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #333;
+            --accent: #8B7355;
+            --light: #f8f8f8;
+            --gold: #C0A062;
+            --white: #ffffff;
+            --text: #333;
+            --text-light: #777;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        :root {
-            --primary: #8B4513;
-            --secondary: #D2B48C;
-            --accent: #C19A6B;
-            --light: #F5F5DC;
-            --dark: #3C2A1E;
-            --gold: #D4AF37;
-        }
-        
         body {
             font-family: 'Noto Serif TC', serif;
-            background-color: var(--light);
-            color: var(--dark);
+            color: var(--text);
             line-height: 1.8;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23D2B48C" stroke-width="0.5" opacity="0.3"/></svg>');
+            background-color: var(--white);
+            overflow-x: hidden;
         }
         
         .container {
@@ -36,14 +38,28 @@
             padding: 0 20px;
         }
         
-        /* 導航欄樣式 */
+        /* 導航欄 */
         header {
-            background: linear-gradient(to bottom, var(--primary), var(--dark));
-            padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo-container {
@@ -53,7 +69,7 @@
         }
         
         .logo {
-            height: 60px;
+            height: 50px;
             width: auto;
         }
         
@@ -63,25 +79,18 @@
         }
         
         .chinese-name {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 1.8rem;
-            color: var(--light);
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            line-height: 1.2;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--primary);
+            letter-spacing: 1px;
         }
         
         .english-name {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            letter-spacing: 1px;
-            margin-top: 3px;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
         }
         
         nav ul {
@@ -91,94 +100,106 @@
         }
         
         nav a {
-            color: var(--light);
+            color: var(--text);
             text-decoration: none;
-            font-size: 1.1rem;
-            padding: 8px 15px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1px;
             position: relative;
-        }
-        
-        nav a:hover {
-            background-color: rgba(210, 180, 140, 0.3);
+            transition: all 0.3s ease;
         }
         
         nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
+            bottom: -5px;
+            left: 0;
             width: 0;
-            height: 2px;
+            height: 1px;
             background: var(--gold);
             transition: all 0.3s ease;
-            transform: translateX(-50%);
         }
         
         nav a:hover::after {
-            width: 70%;
+            width: 100%;
         }
         
-        /* 英雄區域樣式 */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(60, 42, 30, 0.7), rgba(60, 42, 30, 0.7)), 
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--light);
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            padding: 20px;
-        }
-        
-        .hero h1 {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            letter-spacing: 5px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        nav a:hover {
             color: var(--gold);
         }
         
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* 英雄區域 */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            background: url('https://images.unsplash.com/photo-1600566752225-3f8a5e9f0a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 70px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
         .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            opacity: 0.9;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(to right, var(--gold), #B8860B);
-            color: var(--dark);
+            background: transparent;
+            color: var(--white);
             padding: 15px 40px;
-            border-radius: 50px;
+            border: 1px solid var(--white);
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
         }
         
         .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+            background: var(--white);
+            color: var(--primary);
         }
         
         /* 章節樣式 */
         .section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         .section-header {
@@ -187,10 +208,10 @@
         }
         
         .section-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 3rem;
+            font-size: 2.5rem;
+            font-weight: 500;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             position: relative;
             display: inline-block;
         }
@@ -202,14 +223,13 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 4px;
+            height: 2px;
             background: var(--gold);
-            border-radius: 2px;
         }
         
         .section-subtitle {
-            font-size: 1.3rem;
-            color: var(--accent);
+            font-size: 1.1rem;
+            color: var(--text-light);
             max-width: 700px;
             margin: 0 auto;
         }
@@ -218,7 +238,7 @@
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
         }
         
         .about-text {
@@ -226,21 +246,20 @@
         }
         
         .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 25px;
             color: var(--primary);
         }
         
         .about-text p {
             margin-bottom: 20px;
-            text-align: justify;
+            color: var(--text);
+            line-height: 1.8;
         }
         
         .about-image {
             flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             position: relative;
         }
         
@@ -248,68 +267,62 @@
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
         /* 創辦人簡介 */
         .founder-section {
-            background: linear-gradient(to bottom, var(--secondary), var(--light));
+            background-color: var(--light);
         }
         
         .founder-content {
             display: flex;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
         
         .founder-image {
             flex: 1;
-            border: 10px solid var(--light);
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            position: relative;
         }
         
         .founder-image img {
             width: 100%;
             height: auto;
             display: block;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
         .founder-info {
-            flex: 1.5;
+            flex: 1;
         }
         
         .founder-name {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            font-weight: 500;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .founder-title {
-            font-size: 1.3rem;
-            color: var(--accent);
-            margin-bottom: 20px;
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
         
         .founder-info p {
-            margin-bottom: 15px;
-            text-align: justify;
+            margin-bottom: 20px;
+            color: var(--text);
+            line-height: 1.8;
         }
         
         .founder-quote {
             font-style: italic;
             padding: 20px;
-            border-left: 4px solid var(--gold);
-            background-color: rgba(255, 255, 255, 0.3);
+            border-left: 2px solid var(--gold);
+            background-color: rgba(192, 160, 98, 0.05);
             margin: 30px 0;
-            border-radius: 0 10px 10px 0;
+            color: var(--text);
         }
         
         /* 服務項目 */
@@ -320,78 +333,81 @@
         }
         
         .service-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             position: relative;
+            overflow: hidden;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
         }
         
         .service-icon {
-            height: 180px;
-            background: linear-gradient(to right, var(--primary), var(--dark));
+            height: 200px;
+            background-color: var(--light);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 3rem;
             color: var(--gold);
         }
         
         .service-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .service-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 500;
             color: var(--primary);
-            margin-bottom: 15px;
-            text-align: center;
+            margin-bottom: 20px;
         }
         
         .service-list {
             list-style: none;
-            padding-left: 20px;
         }
         
         .service-list li {
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
             margin-bottom: 10px;
+            color: var(--text);
         }
         
         .service-list li::before {
-            content: "•";
-            color: var(--gold);
-            font-size: 1.5rem;
+            content: '';
             position: absolute;
             left: 0;
-            top: -5px;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
         }
         
         /* 頁腳樣式 */
         footer {
-            background: linear-gradient(to bottom, var(--dark), #1a120b);
-            color: var(--light);
-            padding: 60px 0 30px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 80px 0 30px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
         
         .footer-column h3 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 500;
             margin-bottom: 25px;
-            color: var(--gold);
+            color: var(--white);
+            letter-spacing: 1px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -401,8 +417,8 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
+            width: 40px;
+            height: 2px;
             background: var(--gold);
         }
         
@@ -415,33 +431,35 @@
         }
         
         .footer-links a {
-            color: var(--secondary);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 0.9rem;
         }
         
         .footer-links a:hover {
             color: var(--gold);
-            transform: translateX(5px);
+            padding-left: 5px;
         }
         
         .address-block {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            margin-bottom: 30px;
         }
         
         .address-title {
-            font-weight: bold;
+            font-weight: 500;
             color: var(--gold);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .address-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
         
         .social-links {
@@ -454,106 +472,123 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             background: rgba(255, 255, 255, 0.1);
-            color: var(--light);
+            color: var(--white);
             border-radius: 50%;
-            font-size: 1.2rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
         
         .social-links a:hover {
             background: var(--gold);
-            color: var(--dark);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         
         .copyright {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: var(--secondary);
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
         }
         
         /* 響應式設計 */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 2.8rem;
             }
             
             .about-content, .founder-content {
                 flex-direction: column;
             }
+            
+            .about-image, .founder-image {
+                order: -1;
+            }
         }
         
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 20px;
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                transform: translateY(0);
             }
             
             nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                min-height: 600px;
+                margin-top: 60px;
             }
             
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 70px 0;
             }
             
             .section-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
-        }
-        
-        /* 服務類別標籤 */
-        .service-category {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--gold);
-            color: var(--dark);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
     <!-- 導航欄 -->
-    <header>
+    <header id="header">
         <div class="container nav-container">
             <div class="logo-container">
-                <img src="company logo.png" alt="玄極風水" class="logo">
+                <img src="https://via.placeholder.com/50x50/1a1a1a/FFFFFF?text=LOGO" alt="玄極風水命理集團" class="logo">
                 <div class="logo-text">
-                    <div class="chinese-name">玄極風水</div>
+                    <div class="chinese-name">玄極風水命理集團</div>
                     <div class="english-name">INFINITY GROUP CONSULTING</div>
                 </div>
             </div>
-            <nav>
+            <nav id="nav">
                 <ul>
-                    <li><a href="#about"><i class="fas fa-building"></i> 公司簡介</a></li>
-                    <li><a href="#founder"><i class="fas fa-user"></i> 創辦人簡介</a></li>
-                    <li><a href="#services"><i class="fas fa-fengshui"></i> 服務項目</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
+                    <li><a href="#about">公司簡介</a></li>
+                    <li><a href="#founder">創辦人簡介</a></li>
+                    <li><a href="#services">服務項目</a></li>
+                    <li><a href="#contact">聯絡我們</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <!-- 英雄區域 -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>玄極風水</h1>
-            <p>專業風水命理服務，融合傳統智慧與現代生活</p>
-            <a href="#contact" class="cta-button">預約專業諮詢 <i class="fas fa-arrow-right"></i></a>
+        <div class="container hero-content">
+            <h1>專業風水命理服務</h1>
+            <p>融合傳統智慧與現代科學，為您創造和諧的生活與事業空間</p>
+            <a href="#contact" class="cta-button">預約諮詢</a>
         </div>
     </section>
 
@@ -562,21 +597,20 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">公司簡介</h2>
-                <p class="section-subtitle">融合傳統智慧與現代科學，為您打造和諧的生活與事業空間</p>
+                <p class="section-subtitle">真誠 · 專業 · 與時並進</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>關於玄極風水</h3>
-                    <p>玄極風水是由幾位資深的玄學師傅合作的顧問團。師傅們專業於傳統學理並保持與時並進，是以能提供受眾廣的服務與符合實際狀況的建議。</p>
+                    <h3>玄極風水命理集團</h3>
+                    <p>「集團」意指「顧問團」，聯合幾位資深的玄學師傅。師傅們專業於傳統學理並保持與時並進，是以能提供受眾廣的服務與符合實際狀況的建議。</p>
                     <p>廣大的服務主要分三大類：</p>
                     <p><strong>「風水」</strong>包括：商宅風水、陽宅風水、陰宅風水、生基風水</p>
                     <p><strong>「易數」</strong>包括：八字命理、嬰兒起名、成人改名、數字擇吉、冥想三勝宮</p>
                     <p><strong>「擇吉」</strong>包括：新屋擇吉、良地擇吉、問事、吉日吉時擇吉（嫁娶、入宅、產子等等）</p>
                     <p>師傅也會定期開班授課，主要課程為「八字」、「奇門遁甲」。</p>
-                    <p>「玄極風水」，旨在「真誠」、「專業」、「與時並進」- 為本的理念，「伴隨」、「及時」、「解惑」 - 給您的體驗，「安心」、「無憂」 - 趨吉避諱。</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1096&q=80" alt="玄極風水">
+                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1096&q=80" alt="玄極風水命理集團">
                 </div>
             </div>
         </div>
@@ -587,20 +621,17 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">創辦人簡介</h2>
-                <p class="section-subtitle">林奕言 Randolph Lim 的玄學傳承與實踐</p>
+                <p class="section-subtitle">林奕言 Randolph Lim</p>
             </div>
             <div class="founder-content">
                 <div class="founder-image">
-                    <img src="founder.jpeg" alt="林奕言 Randolph Lim">
+                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1071&q=80" alt="林奕言 Randolph Lim">
                 </div>
                 <div class="founder-info">
                     <h3 class="founder-name">林奕言 Randolph Lim</h3>
-                    <p class="founder-title">玄學大師 | 玄極風水創辦人</p>
+                    <p class="founder-title">玄學大師 | 玄極風水命理集團創辦人</p>
                     <p>姓「林」，冠字「奕言」。1984年出生於馬來西亞柔佛州，生於六口清寒之家，全賴母親勤懇持家，此為命理中「印星護命」之初始印證。</p>
                     <p>幼承華小教育，獨中六年淬鍊，深植易理之基，中華文化之傳承與薰陶。完成基礎學業後，為求生計而前往新加坡，入行娛樂業10餘載，於行業中各式各樣的接觸中，觀盡人性貧富與人生百態。</p>
-                    <p>生於80年代，時值「三元九運」中的下元八運艮土當值，年代的特性孕育了務實、真誠的性格品質。故為人秉持真誠待人並從一而終，嚴謹的學習與踐行玄學的易理。</p>
-                    <p>正式接觸玄學之始於20年前（2005年），有幸於南馬風水名家「羅一鳴」師傅旗下的「龍岩風水學院」，完成「風水堪輿」的知識傳承。於後深研命理學「子平八字」、戰略學「奇門遁甲」、「易經數字學」、「擇日學」、「命名學」等各類玄學傳承。</p>
-                    <p>並有幸伴隨資深師傅長期闖南走北，在眾多實例中去印證「陽宅風水」、「陰宅風水」的「佈局」對人生所帶來的影響，以及各門玄學知識的應用範圍。並於2023年，就新加坡創立專業顧問公司「玄極風水」。</p>
                     <div class="founder-quote">
                         <p>"玄學不是迷信，而是古人智慧的結晶，是解讀宇宙規律的鑰匙。我們致力於將這份智慧應用於現代生活，幫助人們創造更和諧的環境與人生。"</p>
                     </div>
@@ -619,7 +650,6 @@
             <div class="services-grid">
                 <!-- 風水服務 -->
                 <div class="service-card">
-                    <div class="service-category">風水</div>
                     <div class="service-icon">
                         <i class="fas fa-mountain"></i>
                     </div>
@@ -636,7 +666,6 @@
                 
                 <!-- 易數服務 -->
                 <div class="service-card">
-                    <div class="service-category">易數</div>
                     <div class="service-icon">
                         <i class="fas fa-calculator"></i>
                     </div>
@@ -654,7 +683,6 @@
                 
                 <!-- 擇吉服務 -->
                 <div class="service-card">
-                    <div class="service-category">擇吉</div>
                     <div class="service-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
@@ -664,14 +692,13 @@
                             <li>新屋擇吉</li>
                             <li>良地擇吉</li>
                             <li>問事</li>
-                            <li>吉日吉時擇吉（嫁娶、入宅、產子等）</li>
+                            <li>吉日吉時擇吉</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- 授課服務 -->
                 <div class="service-card">
-                    <div class="service-category">授課</div>
                     <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -694,7 +721,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>玄極風水</h3>
+                    <h3>玄極風水命理集團</h3>
                     <p>INFINITY GROUP CONSULTING</p>
                     <p>專業風水命理服務，融合傳統智慧與現代生活，為您創造和諧環境與美好人生。</p>
                     <div class="social-links">
@@ -706,34 +733,22 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h3>服務項目</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 風水服務</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 易數服務</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 擇吉服務</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 專業課程</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>聯絡我們</h3>
+                    <h3>辦事處</h3>
                     <div class="address-block">
                         <div class="address-title">
-                            <i class="fas fa-map-marker-alt"></i> 馬來西亞辦事處
+                            <i class="fas fa-map-marker-alt"></i> 馬來西亞
                         </div>
-                        <p>INFINITY GROUP CONSULTING</p>
-                        <p>NO. 18-01, JALAN AUSTIN HEIGHTS 7/7,</p>
-                        <p>TAMAN MOUNT AUSTIN,</p>
-                        <p>81100 JOHOR BAHRU, JOHOR, Malaysia.</p>
+                        <p class="address-text">NO. 18-01, JALAN AUSTIN HEIGHTS 7/7,<br>
+                        TAMAN MOUNT AUSTIN,<br>
+                        81100 JOHOR BAHRU, JOHOR, Malaysia</p>
                     </div>
                     
                     <div class="address-block">
                         <div class="address-title">
-                            <i class="fas fa-map-marker-alt"></i> 新加坡辦事處
+                            <i class="fas fa-map-marker-alt"></i> 新加坡
                         </div>
-                        <p>Magnetism group consulting</p>
-                        <p>Blk985B, Buangkok Crescent #11-24,</p>
-                        <p>532985 Singapore.</p>
+                        <p class="address-text">Blk985B, Buangkok Crescent #11-24,<br>
+                        532985 Singapore</p>
                     </div>
                 </div>
                 
@@ -741,13 +756,15 @@
                     <h3>聯絡方式</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+6019-9853149"><i class="fas fa-phone"></i> +6019-985 3149</a></li>
-                        <li><a href="https://wa.me/6597287886"><i class="fab fa-whatsapp"></i> +65 9728 7886 (WhatsApp)</a></li>
-                        <li><a href="https://wa.me/601159141495"><i class="fab fa-whatsapp"></i> +6011 5914 1495 (WhatsApp)</a></li>
-                        <li><a href="mailto:infinitygroupconsulting@gmail.com"><i class="fas fa-envelope"></i> infinitygroupconsulting@gmail.com</a></li>
+                        <li><a href="https://wa.me/6597287886"><i class="fab fa-whatsapp"></i> +65 9728 7886</a></li>
+                        <li><a href="https://wa.me/601159141495"><i class="fab fa-whatsapp"></i> +6011 5914 1495</a></li>
+                        <li><a href="mailto:info@infinitygroup.com"><i class="fas fa-envelope"></i> info@infinitygroup.com</a></li>
                     </ul>
-                    
-                    <h3 style="margin-top: 20px;">營業時間</h3>
-                    <p>僅限預約</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>營業時間</h3>
+                    <p class="address-text">僅限預約</p>
                 </div>
             </div>
             
@@ -756,5 +773,46 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // 滾動時導航欄效果
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // 手機版菜單切換
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // 點擊導航鏈接後關閉手機菜單
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
