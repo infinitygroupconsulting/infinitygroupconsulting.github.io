@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>玄极风水 | FengShui consultancy</title>
-    <!-- 高清 PNG 图标 -->
     <link rel="icon" href="company-logo.png" type="image/png">
-    <!-- 后备 .ico 文件 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
    	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -182,6 +180,9 @@
 }
 
 @media (max-width: 768px) {
+    .brush-font { font-size: 3.5rem; }
+    .seal-ink { width: 60px; height: 60px; }
+    .dynamic-divider { width: 80%; }
     .header-social-links {
         display: none;
     }
@@ -209,43 +210,119 @@
             margin-left: calc(-50vw + 50%);
 }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+
         }
         
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            color: var(--white);
-            text-align: center;
-            padding: 0 20px;
-        }
-        
-       .hero h1, .hero p {
-    font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', 'Noto Serif TC', serif;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1px;
-    font-weight: 400;
+       /* ===== 基础增强 ===== */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 5% 0;
 }
 
-.hero h1 {
-    font-size: 4.5rem;
-    margin-bottom: 10px;
-    line-height: 1.3;
+/* ===== 毛笔字效果 ===== */
+@font-face {
+    font-family: 'BrushFont';
+    src: url('fonts/HanYiShouWeiShouXie.ttf') format('truetype');
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    line-height: 1.6;
+.brush-font {
+    font-family: 'BrushFont', 'Ma Shan Zheng', cursive;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: #FFF;
+    text-shadow: 
+        3px 3px 0px rgba(0,0,0,0.2),
+        6px 6px 10px rgba(0,0,0,0.3);
+    line-height: 1.2;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+}
+
+        .brush-font, .dynamic-divider {
+    will-change: transform, opacity;
+}
+
+.years {
+    color: var(--gold);
     display: block;
+    transform: rotate(-2deg);
+    text-align: center;
+}
+
+.service {
+    display: block;
+    text-align: center;
+    margin-top: -1rem;
+}
+
+/* ===== 卷轴装饰 ===== */
+.scroll-decoration {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%;
+    height: 120%;
+    background: 
+        url('data:image/svg+xml;utf8,<svg...卷轴矢量图.../>') no-repeat center/contain;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* ===== 动态分隔线 ===== */
+.dynamic-divider {
+    height: 3px;
+    width: 60%;
+    margin: 2rem auto;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--gold) 20%, 
+        var(--gold) 80%, 
+        transparent 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.dynamic-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.8), 
+        transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    100% { left: 100%; }
+}
+
+/* ===== 印章效果 ===== */
+.seal-ink {
+    position: absolute;
+    right: 10%;
+    bottom: -5%;
+    width: 80px;
+    height: 80px;
+    background: 
+        url('data:image/svg+xml;utf8,<svg...印章矢量图.../>') no-repeat center/contain;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 5px rgba(192,160,98,0.7));
+}
+
+/* ===== 粒子特效容器 ===== */
+.particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
         
         .cta-button {
@@ -283,19 +360,18 @@
             color: var(--primary);
             margin-bottom: 15px;
             position: relative;
-            display: inline-block;
-        }
-        
+            display: block;
+}
+
         .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
+            left: 0;
+            width: 100%;
             height: 2px;
             background: var(--gold);
-        }
+}
         
         .mission-content {
             max-width: 800px;
@@ -633,37 +709,37 @@
                     <li>
                         <a href="#fengshui">风水堪舆 <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
-                            <li><a href="#home-fengshui">家宅</a></li>
-                            <li><a href="#business-fengshui">商业</a></li>
-                            <li><a href="#factory-fengshui">工厂</a></li>
-                            <li><a href="#construction-fengshui">建造</a></li>
-                            <li><a href="#grave-fengshui">福地</a></li>
-                            <li><a href="#shengji-fengshui">生基</a></li>
-                            <li><a href="#columbarium-fengshui">骨灰阁</a></li>
+                            <li><a href="#home-fengshui">家宅 Residential</a></li>
+                            <li><a href="#business-fengshui">商业 Commercial</a></li>
+                            <li><a href="#factory-fengshui">工厂 Industrial</a></li>
+                            <li><a href="#construction-fengshui">建造 Construction</a></li>
+                            <li><a href="#grave-fengshui">福地 Graveyard</a></li>
+                            <li><a href="#shengji-fengshui">生基 Sheng Ji</a></li>
+                            <li><a href="#columbarium-fengshui">骨灰阁 Columbarium</a></li>
                         </ul>
                     </li>
                     
                     <li>
                         <a href="#value">价值选择 <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
-                            <li><a href="#property-selection">产业择吉</a></li>
-                            <li><a href="#number-selection">数字择吉</a></li>
-                            <li><a href="#qimen-meditation">奇门灵修三胜宫</a></li>
-                            <li><a href="#qimen-strategy">奇门商业战略盘</a></li>
-                            <li><a href="#qimen-prediction">奇门日常预测</a></li>
+                            <li><a href="#property-selection">产业择吉 Property Selection</a></li>
+                            <li><a href="#number-selection">数字择吉 Number Selection</a></li>
+                            <li><a href="#qimen-meditation">奇门灵修三胜宫 Qi Men Meditation</a></li>
+                            <li><a href="#qimen-strategy">奇门商业战略盘 Qi Men Strategy</a></li>
+                            <li><a href="#qimen-prediction">奇门日常预测 Qi Men Prediction</a></li>
                         </ul>
                     </li>
                     
                     <li>
                         <a href="#blueprint">人生蓝图 <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
-                            <li><a href="#destiny-analysis">命理分析</a></li>
-                            <li><a href="#annual-report">流年报告</a></li>
-                            <li><a href="#name-change">成人改名</a></li>
-                            <li><a href="#move-in">入伙择时</a></li>
-                            <li><a href="#wedding">嫁娶择时</a></li>
-                            <li><a href="#childbirth">产子择时</a></li>
-                            <li><a href="#baby-naming">宝宝命名</a></li>
+                            <li><a href="#destiny-analysis">命理分析 Destiny Analysis</a></li>
+                            <li><a href="#annual-report">流年报告 Annual Report</a></li>
+                            <li><a href="#name-change">成人改名 Adult Naming</a></li>
+                            <li><a href="#move-in">入伙择时 Move-in Timing</a></li>
+                            <li><a href="#wedding">嫁娶择时 Wedding Timing</a></li>
+                            <li><a href="#childbirth">产子择时 Childbirth Timing</a></li>
+                            <li><a href="#baby-naming">宝宝命名 Baby Naming</a></li>
                         </ul>
                     </li>
                     
@@ -678,37 +754,65 @@
 
     <!-- 英雄区域 -->
     <section class="hero" id="home">
-    <div class="container hero-content">
-        <h1>二十年风水服务</h1>
-        <p>7306个日子，你问，我答。</p>
-        <p>20 Years of Feng Shui Service, 7306 days, you ask, I answer.</p>
+   <div class="container hero-content">
+    <div class="hero-marquee">
+        <!-- 毛笔字主标题 -->
+        <h1 class="brush-font">
+            <span class="years">二十年</span>
+            <span class="service">风水服务</span>
+        </h1>
+        
+        <!-- 传统卷轴装饰 -->
+        <div class="scroll-decoration"></div>
+        
+        <!-- 核心副文案 -->
+        <p class="slogan">
+            <span class="gold-text">7306</span>个日子，你问，我答。
+        </p>
+        
+        <!-- 动态分隔线 -->
+        <div class="dynamic-divider"></div>
+        
+        <!-- 英文辅助 -->
+        <p class="subtext">
+            <span class="highlight">20 Years</span> of Feng Shui Service, 
+            <span class="highlight">7306 days</span>, you ask, I answer.
+        </p>
+        
+        <!-- 传统印章 -->
+        <div class="seal-ink"></div>
     </div>
+</div>
 </section>
 
     <!-- 宗旨区域 -->
     <section class="mission-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">玄极风水宗旨 | Philosophy</h2>
+                <h2 class="section-title">玄极风水宗旨 XuanJi philosophy</h2>
             </div>
             <div class="mission-content">
-    <p>风水布局，上选趋吉，次避凶，平则化煞;</p>
-    <p>选好地点，做对装修，择吉进行，择时入伙，择位敲打;</p>
-    <p>你不知道，我让你知道；你不懂选，我教你选;</p>
-    <p>你看不见的「凶」，我「指」你「避」;</p>
+    <p>风水布局，上选趋吉，次避凶，平则化煞。</p>
+    <p>选好地点，做对装修，择日进行，择时入伙，择吉敲打。</p>
+    <p>你不知道，我让你知道；你不懂选，我教你选。</p>
+    <p>你看不见的「凶」，我「指」你「避」；</p>
     <p>你要的「吉」，我「点」你「去」。</p>
     <p>将一切交给「玄极风水」，</p>
     <p>传统智慧，现代建议，真正服务于您人生中的「专业」。</p>
             </div>
     
    <div class="english-note">
-    <p>Feng Shui layout, first choice is to attract good fortune, second is to avoid misfortune, third is to neutralize negative energy;</p>
-    <p>choose the right location, do the right renovation, select auspicious timing for moving in, and identify the right spots for adjustments;</p>
-    <p>what you don't know, I'll help you understand;</p>
-    <p>what you can't choose, I'll guide you to select;</p>
-    <p>the "misfortune" you can't see, I'll "point" for you to "avoid";</p>
-    <p>the "fortune" you seek, I'll "direct" you to "pursue".</p>
-    <p>Leave everything to "Infinity Group consulting" - traditional wisdom, modern advice, truly serving the "professionalism" in your life.</p>
+    <p>Feng Shui layout,</p>
+    <p>first choice is to attract good fortune,</p>
+    <p>second is to avoid misfortune, third is to neutralize negative energy.</p>
+    <p>Choose the right location, do the right renovation,</p>
+    <p>select auspicious timing for moving in, and identify the right spots for adjustments.</p>
+    <p>What you don't know, I'll help you understand.</p>
+    <p>What you can't choose, I'll guide you to select.</p>
+    <p>The "misfortune" you can't see, I'll "point" for you to "avoid".</p>
+    <p>The "fortune" you seek, I'll "direct" you to "pursue".</p>
+    <p>Leave everything to "Infinity Group consulting"</p>
+    <p>traditional wisdom, modern advice, truly serving the "professionalism" in your life.</p>
 </div>
     </section>
 
@@ -753,7 +857,7 @@
                 <div class="service-links">
                     <a href="#destiny-analysis" class="service-link">命理分析 / Destiny Analysis</a>
                     <a href="#annual-report" class="service-link">流年报告 / Annual Report</a>
-                    <a href="#name-change" class="service-link">成人改名 / Name Change</a>
+                    <a href="#name-change" class="service-link">成人改名 / Adult Naming</a>
                     <a href="#move-in" class="service-link">入伙择时 / Move-in Timing</a>
                     <a href="#wedding" class="service-link">嫁娶择时 / Wedding Timing</a>
                     <a href="#childbirth" class="service-link">产子择时 / Childbirth Timing</a>
@@ -1215,4 +1319,30 @@ document.querySelectorAll('nav li > a').forEach(link => {
             }
         });
     }
+});
+
+        document.addEventListener('DOMContentLoaded', function() {
+    particlesJS('particles-js', {
+        "particles": {
+            "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#C0A062" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5, "random": true },
+            "size": { "value": 3, "random": true },
+            "line_linked": { "enable": false },
+            "move": {
+                "enable": true,
+                "speed": 1,
+                "direction": "none",
+                "random": true,
+                "straight": false,
+                "out_mode": "out"
+            }
+        },
+        "interactivity": {
+            "events": {
+                "onhover": { "enable": true, "mode": "repulse" }
+            }
+        }
+    });
 });
