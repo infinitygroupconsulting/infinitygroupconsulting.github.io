@@ -256,18 +256,6 @@
     color: rgba(255,255,255,0.85); /* Bright white */
     text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
-/* ===== 卷轴装饰 ===== */
-.scroll-decoration {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 110%;
-    height: 120%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40"><path d="M0,20 Q100,0 200,20 Q100,40 0,20" fill="none" stroke="%23C0A062" stroke-width="1" opacity="0.5"/></svg>') repeat-x center;
-    z-index: -1;
-    opacity: 0.7;
-}
 
 /* ===== 动态分隔线 ===== */
 .dynamic-divider {
@@ -301,17 +289,6 @@
     100% { left: 100%; }
 }
 
-/* ===== 印章效果 ===== */
-.seal-ink {
-    position: absolute;
-    right: 10%;
-    bottom: -5%;
-    width: 80px;
-    height: 80px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" fill="%23d40000" opacity="0.8"/><text x="50" y="60" font-family="Arial" font-size="40" fill="white" text-anchor="middle">福</text></svg>') no-repeat center;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 5px rgba(192,160,98,0.7));
-}
 
 /* ===== 粒子特效容器 ===== */
 .particles-js {
@@ -754,30 +731,21 @@
     <section class="hero" id="home">
    <div class="container hero-content">
     <div class="hero-marquee">
-        <!-- 毛笔字主标题 -->
         <h1 class="brush-font">
             <span class="years">二十年</span>
             <span class="service">风水服务</span>
         </h1>
-        
-        <!-- 传统卷轴装饰 -->
-        <div class="scroll-decoration"></div>
 
-        <!-- 动态分隔线 -->
         <div class="dynamic-divider"></div>
         
-        <!-- 核心副文案 -->
         <p class="slogan">
             <span class="gold-text">7306</span>个日子，你问，我答。
         </p>
         
-        <!-- 英文辅助 -->
         <p class="subtext">
             <span class="highlight">20 Years of Feng Shui Service, 7306 days, you ask, I answer.
         </p>
         
-        <!-- 传统印章 -->
-        <div class="seal-ink"></div>
     </div>
 </div>
 </section>
