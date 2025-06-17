@@ -224,16 +224,15 @@
 }
 
 .brush-font {
-    font-family: 'BrushFont', 'Ma Shan Zheng', cursive;
-    font-size: clamp(3rem, 8vw, 6rem);
-    color: #FFF;
+    font-family: 'Ma Shan Zheng', cursive; /* Changed to more readable font */
+    font-size: clamp(3rem, 8vw, 5rem); /* Slightly smaller */
+    color: rgba(255,255,255,0.9); /* Brighter white */
     text-shadow: 
-        3px 3px 0px rgba(0,0,0,0.2),
-        6px 6px 10px rgba(0,0,0,0.3);
+        2px 2px 4px rgba(0,0,0,0.5),
+        0 0 20px rgba(192,160,98,0.5); /* Added gold glow */
     line-height: 1.2;
-    margin: 0 auto;
-    position: relative;
-    display: inline-block;
+    font-weight: 400; /* Reduced boldness */
+    letter-spacing: 2px;
 }
 
         .brush-font, .dynamic-divider {
@@ -253,6 +252,10 @@
     margin-top: -1rem;
 }
 
+        .slogan, .subtext {
+    color: rgba(255,255,255,0.85); /* Bright white */
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
 /* ===== 卷轴装饰 ===== */
 .scroll-decoration {
     position: absolute;
@@ -261,8 +264,7 @@
     transform: translateX(-50%);
     width: 110%;
     height: 120%;
-    background: 
-        url('data:image/svg+xml;utf8,<svg...卷轴矢量图.../>') no-repeat center/contain;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40"><path d="M0,20 Q100,0 200,20 Q100,40 0,20" fill="none" stroke="%23C0A062" stroke-width="1" opacity="0.5"/></svg>') repeat-x center;
     z-index: -1;
     opacity: 0.7;
 }
@@ -306,8 +308,7 @@
     bottom: -5%;
     width: 80px;
     height: 80px;
-    background: 
-        url('data:image/svg+xml;utf8,<svg...印章矢量图.../>') no-repeat center/contain;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" fill="%23d40000" opacity="0.8"/><text x="50" y="60" font-family="Arial" font-size="40" fill="white" text-anchor="middle">福</text></svg>') no-repeat center;
     opacity: 0.9;
     filter: drop-shadow(0 0 5px rgba(192,160,98,0.7));
 }
@@ -761,19 +762,18 @@
         
         <!-- 传统卷轴装饰 -->
         <div class="scroll-decoration"></div>
+
+        <!-- 动态分隔线 -->
+        <div class="dynamic-divider"></div>
         
         <!-- 核心副文案 -->
         <p class="slogan">
             <span class="gold-text">7306</span>个日子，你问，我答。
         </p>
         
-        <!-- 动态分隔线 -->
-        <div class="dynamic-divider"></div>
-        
         <!-- 英文辅助 -->
         <p class="subtext">
-            <span class="highlight">20 Years</span> of Feng Shui Service, 
-            <span class="highlight">7306 days</span>, you ask, I answer.
+            <span class="highlight">20 Years of Feng Shui Service, 7306 days, you ask, I answer.
         </p>
         
         <!-- 传统印章 -->
@@ -786,7 +786,7 @@
     <section class="mission-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">玄极风水宗旨 XuanJi philosophy</h2>
+                <h2 class="section-title">玄极风水宗旨 XJ FengShui philosophy</h2>
             </div>
             <div class="mission-content">
     <p>风水布局，上选趋吉，次避凶，平则化煞。</p>
@@ -817,8 +817,7 @@
 <section class="service-nav-section" id="service-nav-section">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">服务导航</h2>
-            <h2 class="section-title">Service Navigation</h2>
+            <h2 class="section-title">服务导航 Service Navigation</h2>
         </div>
         
         <div class="service-nav">
