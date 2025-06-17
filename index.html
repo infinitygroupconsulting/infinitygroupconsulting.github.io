@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -16,6 +14,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a1a1a;
@@ -193,17 +192,21 @@
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 500;
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.5rem;
             margin-bottom: 40px;
             max-width: 600px;
             opacity: 0.9;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
         }
         
         .cta-button {
@@ -235,7 +238,8 @@
         }
         
         .section-title {
-            font-size: 2.5rem;
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 2.8rem;
             font-weight: 500;
             color: var(--primary);
             margin-bottom: 15px;
@@ -261,9 +265,36 @@
         }
         
         .mission-content p {
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.2rem;
             margin-bottom: 20px;
             color: var(--text);
             line-height: 1.8;
+        }
+        
+        .service-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 50px;
+        }
+        
+        .service-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gold);
+        }
+        
+        .service-button:hover {
+            background-color: transparent;
+            color: var(--gold);
         }
         
         /* 主内容区域 */
@@ -339,6 +370,24 @@
             margin: 20px 0;
         }
         
+        .enquire-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .enquire-button:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
         /* 页脚样式 */
         footer {
             background-color: var(--primary);
@@ -378,9 +427,19 @@
         }
         
         /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.8rem;
+            }
+        }
+        
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
             }
             
             .content-block {
@@ -390,6 +449,15 @@
             
             .content-block.reverse {
                 flex-direction: column;
+            }
+            
+            .service-buttons {
+                gap: 10px;
+            }
+            
+            .service-button {
+                padding: 10px 20px;
+                font-size: 0.8rem;
             }
         }
         
@@ -440,11 +508,11 @@
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .mission-section, .main-content {
@@ -452,7 +520,35 @@
             }
             
             .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .mission-content p {
+                font-size: 1rem;
+            }
+            
+            .service-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-button {
+                width: 80%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
                 font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -519,7 +615,9 @@
         <div class="container hero-content">
             <h1>20年的风水服务</h1>
             <p>7306个日子，你问，我答。</p>
-            <a href="#contact" class="cta-button">「选择」预约</a>
+            <p>20 Years of Feng Shui Service</p>
+            <p>7,306 days, you ask, I answer.</p>
+            <a href="#contact" class="cta-button">「选择」预约 | Book Now</a>
         </div>
     </section>
 
@@ -528,6 +626,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">玄极风水宗旨</h2>
+                <h2 class="section-title">Infinity Feng Shui Philosophy</h2>
             </div>
             <div class="mission-content">
                 <p>风水布局，</p>
@@ -537,6 +636,38 @@
                 <p>你看不见的「凶」，我「指」你「避」；你要的「吉」，我「点」你「去」。</p>
                 <p>将一切交给「专业」，</p>
                 <p>玄极风水，传统智慧，现代建议，真正服务于您人生中的「专业」。</p>
+                
+                <div class="english-note">
+                    <p>Feng Shui arrangement,</p>
+                    <p>First choice attracts good fortune, second avoids misfortune, neutral transforms negative energy.</p>
+                    <p>Choose the right location, do proper renovation, select auspicious timing, pick the right moving-in date, determine the best spot for adjustments.</p>
+                    <p>What you don't know, I'll let you know; What you can't choose, I'll teach you to choose.</p>
+                    <p>The "misfortune" you can't see, I'll "point" for you to "avoid"; The "fortune" you desire, I'll "guide" you to "attain".</p>
+                    <p>Leave everything to "professionalism",</p>
+                    <p>Infinity Feng Shui - traditional wisdom, modern advice, truly serving the "professionalism" in your life.</p>
+                </div>
+                
+                <div class="service-buttons">
+                    <a href="#home-fengshui" class="service-button">家宅风水 | Home Feng Shui</a>
+                    <a href="#business-fengshui" class="service-button">商业风水 | Business Feng Shui</a>
+                    <a href="#factory-fengshui" class="service-button">工厂风水 | Factory Feng Shui</a>
+                    <a href="#construction-fengshui" class="service-button">建造风水 | Construction Feng Shui</a>
+                    <a href="#grave-fengshui" class="service-button">福地风水 | Graveyard Feng Shui</a>
+                    <a href="#shengji-fengshui" class="service-button">生基风水 | Sheng Ji Feng Shui</a>
+                    <a href="#columbarium-fengshui" class="service-button">骨灰阁风水 | Columbarium Feng Shui</a>
+                    <a href="#property-selection" class="service-button">产业择吉 | Property Selection</a>
+                    <a href="#number-selection" class="service-button">数字择吉 | Number Selection</a>
+                    <a href="#qimen-meditation" class="service-button">奇门灵修 | Qi Men Meditation</a>
+                    <a href="#qimen-strategy" class="service-button">奇门战略 | Qi Men Strategy</a>
+                    <a href="#qimen-prediction" class="service-button">奇门预测 | Qi Men Prediction</a>
+                    <a href="#destiny-analysis" class="service-button">命理分析 | Destiny Analysis</a>
+                    <a href="#annual-report" class="service-button">流年报告 | Annual Report</a>
+                    <a href="#name-change" class="service-button">成人改名 | Name Change</a>
+                    <a href="#move-in" class="service-button">入伙择时 | Move-in Timing</a>
+                    <a href="#wedding" class="service-button">嫁娶择时 | Wedding Timing</a>
+                    <a href="#childbirth" class="service-button">产子择时 | Childbirth Timing</a>
+                    <a href="#baby-naming" class="service-button">宝宝命名 | Baby Naming</a>
+                </div>
             </div>
         </div>
     </section>
@@ -546,371 +677,209 @@
         <div class="container">
             <!-- 风水堪舆 -->
             <section class="content-section" id="fengshui">
-                <h2>风水堪舆</h2>
+                <h2>风水堪舆 | Feng Shui Evaluation</h2>
                 
                 <div class="content-block" id="home-fengshui">
                     <div class="content-image">
-                        <img src="home.jpg" alt="家宅风水">
+                        <img src="home.jpg" alt="家宅风水 | Home Feng Shui">
                     </div>
                     <div class="content-text">
-                        <h3>家宅风水</h3>
+                        <h3>家宅风水 | Home Feng Shui</h3>
                         <p>专业住宅风水评估与布局，优化家居能量流动，提升家庭和谐、健康与财运。我们将根据您的住宅结构、朝向和周边环境，提供全面的风水评估和改善建议。</p>
                         <div class="english-note">
                             Professional residential Feng Shui evaluation and layout optimization to enhance family harmony, health and wealth.
                         </div>
                         <p>服务包括：房屋选址评估、室内布局规划、家具摆设建议、色彩搭配指导、化解风水煞气等。</p>
+                        <p>Services include: Property selection evaluation, interior layout planning, furniture arrangement advice, color scheme guidance, Feng Shui remedy solutions.</p>
+                        <a href="https://wa.me/6597287886?text=我对家宅风水服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block reverse" id="business-fengshui">
                     <div class="content-image">
-                        <img src="business.jpg" alt="商业风水">
+                        <img src="business.jpg" alt="商业风水 | Business Feng Shui">
                     </div>
                     <div class="content-text">
-                        <h3>商业风水</h3>
+                        <h3>商业风水 | Business Feng Shui</h3>
                         <p>企业办公室、店铺风水规划，促进业务发展，提升财运与员工效率。我们将根据您的行业特性和企业目标，量身定制风水布局方案。</p>
                         <div class="english-note">
                             Commercial Feng Shui planning for offices and shops to enhance business growth and employee efficiency.
                         </div>
                         <p>服务包括：商业选址评估、办公室布局规划、收银台位置优化、企业形象设计、招财布局等。</p>
+                        <p>Services include: Business location evaluation, office layout planning, cashier position optimization, corporate image design, wealth attraction arrangement.</p>
+                        <a href="https://wa.me/6597287886?text=我对商业风水服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block" id="factory-fengshui">
                     <div class="content-image">
-                        <img src="factory.jpg" alt="工厂风水">
+                        <img src="factory.jpg" alt="工厂风水 | Factory Feng Shui">
                     </div>
                     <div class="content-text">
-                        <h3>工厂风水</h3>
+                        <h3>工厂风水 | Factory Feng Shui</h3>
                         <p>工业厂房风水规划，确保生产顺利，提升企业运势。我们将针对工厂的特殊环境，提供专业的风水解决方案。</p>
                         <div class="english-note">
                             Feng Shui planning for industrial plants to ensure smooth production and enhance business fortune.
                         </div>
                         <p>服务包括：厂房选址评估、生产线布局规划、办公区设计、仓库位置优化、安全隐患排查等。</p>
+                        <p>Services include: Factory location evaluation, production line layout planning, office area design, warehouse position optimization, safety hazard inspection.</p>
+                        <a href="https://wa.me/6597287886?text=我对工厂风水服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block reverse" id="construction-fengshui">
                     <div class="content-image">
-                        <img src="build.jpg" alt="建造风水">
+                        <img src="build.jpg" alt="建造风水 | Construction Feng Shui">
                     </div>
                     <div class="content-text">
-                        <h3>建造风水</h3>
+                        <h3>建造风水 | Construction Feng Shui</h3>
                         <p>建筑项目风水规划，从选址到设计全程指导。我们将在建筑设计初期就介入，确保项目符合风水原则。</p>
                         <div class="english-note">
                             Feng Shui planning for construction projects from site selection to design.
                         </div>
                         <p>服务包括：地块评估、建筑朝向确定、户型设计指导、景观规划、动土择吉等。</p>
+                        <p>Services include: Land evaluation, building orientation determination, unit design guidance, landscape planning, groundbreaking timing selection.</p>
+                        <a href="https://wa.me/6597287886?text=我对建造风水服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block" id="grave-fengshui">
                     <div class="content-image">
-                        <img src="grave.jpg" alt="福地风水">
+                        <img src="grave.jpg" alt="福地风水 | Graveyard Feng Shui">
                     </div>
                     <div class="content-text">
-                        <h3>福地风水</h3>
+                        <h3>福地风水 | Graveyard Feng Shui</h3>
                         <p>阴宅风水选址与布局，确保祖先安息，福泽后代。</p>
                         <div class="english-note">
                             Yin dwelling (graveyard) Feng Shui site selection and setup to ensure ancestors' peaceful rest.
                         </div>
                         <p>服务包括：墓地选址评估、碑向布局、仪式规划。</p>
+                        <p>Services include: Graveyard location evaluation, tombstone orientation arrangement, ceremony planning.</p>
+                        <a href="https://wa.me/6597287886?text=我对福地风水服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block reverse" id="shengji-fengshui">
                     <div class="content-image">
-                        <img src="shengji.jpg" alt="生基风水">
+                        <img src="shengji.jpg" alt="生基风水 | Sheng Ji Feng Shui">
                     </div>
                     <div class="content-text">
-                        <h3>生基风水</h3>
+                        <h3>生基风水 | Sheng Ji Feng Shui</h3>
                         <p>为在世者预做生基，借助地灵之力增强运势。这是一种高级的风水改运方法，适合希望全面提升运势的人士。</p>
                         <div class="english-note">
                             Advanced Feng Shui method to enhance personal fortune by harnessing earth energy.
                         </div>
                         <p>服务包括：生基选址、仪式规划。</p>
+                        <p>Services include: Sheng Ji location selection, ceremony planning.</p>
+                        <a href="https://wa.me/6597287886?text=我对生基风水服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block" id="columbarium-fengshui">
                     <div class="content-image">
-                        <img src="guhui.jpg" alt="骨灰阁风水">
+                        <img src="guhui.jpg" alt="骨灰阁风水 | Columbarium Feng Shui">
                     </div>
                     <div class="content-text">
-                        <h3>骨灰阁风水</h3>
+                        <h3>骨灰阁风水 | Columbarium Feng Shui</h3>
                         <p>骨灰阁位选择与安置指导，确保先人安息。我们将根据您的具体情况，提供专业的骨灰阁风水建议。</p>
                         <div class="english-note">
                             Columbarium niche selection and placement guidance to ensure peaceful rest.
                         </div>
                         <p>服务包括：骨灰阁选位评估、安置仪式指导、后期祭拜建议等。</p>
+                        <p>Services include: Columbarium niche evaluation, placement ceremony guidance, subsequent worship advice.</p>
+                        <a href="https://wa.me/6597287886?text=我对骨灰阁风水服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
             </section>
             
             <!-- 价值选择 -->
             <section class="content-section" id="value">
-                <h2>价值选择</h2>
+                <h2>价值选择 | Value Selection</h2>
                 
                 <div class="content-block" id="property-selection">
                     <div class="content-image">
-                        <img src="property selection.jpg" alt="产业择吉">
+                        <img src="property selection.jpg" alt="产业择吉 | Property Selection">
                     </div>
                     <div class="content-text">
-                        <h3>产业择吉</h3>
+                        <h3>产业择吉 | Property Selection</h3>
                         <p>根据您的生辰八字和产业特性，选择最适合的购置的单位。</p>
                         <div class="english-note">
                             Selecting auspicious timing for property transactions based on your birth chart.
                         </div>
                         <p>服务包括：产业风水评估x3处。</p>
+                        <p>Services include: Property Feng Shui evaluation for 3 locations.</p>
+                        <a href="https://wa.me/6597287886?text=我对产业择吉服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block reverse" id="number-selection">
                     <div class="content-image">
-                        <img src="number selection.jpg" alt="数字择吉">
+                        <img src="number selection.jpg" alt="数字择吉 | Number Selection">
                     </div>
                     <div class="content-text">
-                        <h3>数字择吉</h3>
+                        <h3>数字择吉 | Number Selection</h3>
                         <p>根据易经数字学原理，为您选择吉祥的电话号码、车牌号码、门牌号码等。数字能量对人的运势有微妙影响，我们将为您选择最有利的数字组合。</p>
                         <div class="english-note">
                             Selecting auspicious numbers based on I-Ching numerology principles.
                         </div>
                         <p>服务包括：电话号码选择、车牌号码选择、门牌号码评估等。</p>
+                        <p>Services include: Phone number selection, car plate number selection, house number evaluation.</p>
+                        <a href="https://wa.me/6597287886?text=我对数字择吉服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block" id="qimen-meditation">
                     <div class="content-image">
-                        <img src="meditation.jpg" alt="奇门灵修三胜宫">
+                        <img src="meditation.jpg" alt="奇门灵修三胜宫 | Qi Men Three Victory Palaces">
                     </div>
                     <div class="content-text">
-                        <h3>奇门灵修三胜宫</h3>
+                        <h3>奇门灵修三胜宫 | Qi Men Three Victory Palaces</h3>
                         <p>运用奇门遁甲的高级技术，帮助您找到生命中的三个最佳方位，用于冥想、修行或重要决策。这是一种深层次的能量调整方法。</p>
                         <div class="english-note">
                             Advanced Qi Men Dun Jia technique to identify three most auspicious directions.
                         </div>
                         <p>服务包括：个人三胜宫定位报告（年）、冥想指导。</p>
+                        <p>Services include: Personal Three Victory Palaces report (annual), meditation guidance.</p>
+                        <a href="https://wa.me/6597287886?text=我对奇门灵修三胜宫服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block reverse" id="qimen-strategy">
                     <div class="content-image">
-                        <img src="business strategy.jpg" alt="奇门商业战略盘">
+                        <img src="business strategy.jpg" alt="奇门商业战略盘 | Qi Men Business Strategy">
                     </div>
                     <div class="content-text">
-                        <h3>奇门商业战略盘</h3>
+                        <h3>奇门商业战略盘 | Qi Men Business Strategy</h3>
                         <p>运用奇门遁甲为企业制定战略规划，选择最佳时机和方向开展业务。这是一种古老的商业决策辅助工具，特别适合企业高层使用。</p>
                         <div class="english-note">
                             Qi Men Dun Jia for business strategy planning and decision making.
                         </div>
                         <p>服务包括：商业决策分析、市场进入时机选择、重要会议时间确定、谈判策略制定等。</p>
+                        <p>Services include: Business decision analysis, market entry timing selection, important meeting timing determination, negotiation strategy formulation.</p>
+                        <a href="https://wa.me/6597287886?text=我对奇门商业战略盘服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
                 
                 <div class="content-block" id="qimen-prediction">
                     <div class="content-image">
-                        <img src="live strategy.jpg" alt="奇门日常预测">
+                        <img src="live strategy.jpg" alt="奇门日常预测 | Qi Men Daily Prediction">
                     </div>
                     <div class="content-text">
-                        <h3>奇门日常预测</h3>
+                        <h3>奇门日常预测 | Qi Men Daily Prediction</h3>
                         <p>运用奇门遁甲为您预测日常生活中的吉凶，提前做好准备。这是一种精密的时间空间预测技术，可以帮助您避开不利时段，把握有利时机。</p>
                         <div class="english-note">
                             Daily life prediction using Qi Men Dun Jia to avoid unfavorable timing.
                         </div>
                         <p>服务包括：重要事件状况预测、时机选择、旅行择吉、医疗择吉等。</p>
+                        <p>Services include: Important event prediction, timing selection, travel auspicious timing, medical treatment timing.</p>
+                        <a href="https://wa.me/6597287886?text=我对奇门日常预测服务感兴趣，想了解更多详情" class="enquire-button">询问详情 | Enquire Now</a>
                     </div>
                 </div>
             </section>
             
             <!-- 人生蓝图 -->
             <section class="content-section" id="blueprint">
-                <h2>人生蓝图</h2>
+                <h2>人生蓝图 | Life Blueprint</h2>
                 
                 <div class="content-block" id="destiny-analysis">
-                    <div class="content-image">
-                        <img src="bazi.jpg" alt="命理分析">
-                    </div>
-                    <div class="content-text">
-                        <h3>命理分析</h3>
-                        <p>通过八字命理分析，了解您的先天命格、性格特质、事业财运、婚姻感情等。我们将为您提供全面的命理解读和发展建议。</p>
-                        <div class="english-note">
-                            Comprehensive Bazi (Four Pillars) analysis to understand your innate destiny.
-                        </div>
-                        <p>服务包括：八字排盘、十神分析、大运流年、事业建议、感情分析等。</p>
-                    </div>
-                </div>
-                
-                <div class="content-block reverse" id="annual-report">
-                    <div class="content-image">
-                        <img src="report.jpg" alt="流年报告">
-                    </div>
-                    <div class="content-text">
-                        <h3>流年报告</h3>
-                        <p>详细分析您未来一年的运势走向，包括事业、财运、健康、感情等方面。我们将为您提供具体的月份运势分析和建议。</p>
-                        <div class="english-note">
-                            Detailed annual fortune analysis covering career, wealth, health and relationships.
-                        </div>
-                        <p>服务包括：流年运势总览、每月运势分析、重要时机提示、注意事项等。</p>
-                    </div>
-                </div>
-                
-                <div class="content-block" id="name-change">
-                    <div class="content-image">
-                        <img src="adult naming.jpg" alt="成人改名">
-                    </div>
-                    <div class="content-text">
-                        <h3>成人改名</h3>
-                        <p>根据您的生辰八字和五行喜忌，以姓名学「三才五格」派为您选择一个吉祥的新名字。名字对人的运势有重要影响，一个好名字可以稍补命理不足，增强运势。</p>
-                        <div class="english-note">
-                            Selecting auspicious new names based on your Bazi and Five Elements.
-                        </div>
-                        <p>服务包括：八字分析、五行补益、姓名评估、新名推荐、改名仪式指导等。</p>
-                    </div>
-                </div>
-                
-                <div class="content-block reverse" id="move-in">
-                    <div class="content-image">
-                        <img src="unition.jpg" alt="入伙择时">
-                    </div>
-                    <div class="content-text">
-                        <h3>入伙择时</h3>
-                        <p>为您选择最佳的入宅时机，确保新居能量和谐。入宅时机对您入住后的运势有重要影响，我们将为您选择最有利的时间。</p>
-                        <div class="english-note">
-                            Selecting auspicious timing for moving into a new home.
-                        </div>
-                        <p>服务包括：入宅吉日选择、入宅仪式指导、房屋净化建议等。</p>
-                    </div>
-                </div>
-                
-                <div class="content-block" id="wedding">
-                    <div class="content-image">
-                        <img src="marriage.jpg" alt="嫁娶择时">
-                    </div>
-                    <div class="content-text">
-                        <h3>嫁娶择时</h3>
-                        <p>根据新人双方的生辰八字，选择最适合婚嫁的日期和时辰。嫁娶时机对婚姻运势有重要影响，我们将为您选择最和谐的时间。</p>
-                        <div class="english-note">
-                            Selecting the most auspicious wedding date and time based on the couple's Bazi.
-                        </div>
-                        <p>服务包括：婚嫁吉时确定、婚房布置建议、婚嫁流程指导等。</p>
-                    </div>
-                </div>
-                
-                <div class="content-block reverse" id="childbirth">
-                    <div class="content-image">
-                        <img src="give birth.jpg" alt="产子择时">
-                    </div>
-                    <div class="content-text">
-                        <h3>产子择时</h3>
-                        <p>为计划剖腹产的孕妇选择最佳的生产时辰，确保孩子拥有良好的先天命格。出生时辰对人的一生命运有重要影响。</p>
-                        <div class="english-note">
-                            Selecting auspicious timing for childbirth to ensure good destiny for the baby.
-                        </div>
-                        <p>服务包括：产前谘询、生辰选择、命格分析、育儿建议等。</p>
-                    </div>
-                </div>
-                
-                <div class="content-block" id="baby-naming">
-                    <div class="content-image">
-                        <img src="baby naming.jpg" alt="宝宝命名">
-                    </div>
-                    <div class="content-text">
-                        <h3>宝宝命名</h3>
-                        <p>根据新生儿的生辰八字，为其选择一个吉祥的名字。好名字可以稍补先天命理不足，为孩子的人生奠定良好基础。</p>
-                        <div class="english-note">
-                            Selecting auspicious names for newborns based on their Bazi.
-                        </div>
-                        <p>服务包括：八字分析、五行补益、姓名推荐、名字解释、命名仪式指导等。</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- 联络预约 -->
-            <section class="content-section" id="contact">
-                <h2>联络预约</h2>
-                
-                <div class="content-block">
-                    <div class="content-image">
-                        <img src="site visit.jpg" alt="实地布局">
-                    </div>
-                    <div class="content-text">
-                        <h3>实地布局</h3>
-                        <p>我们资深的风水师傅将亲自到您的住宅或办公场所进行实地考察，提供专业的风水布局建议。实地服务可以更准确地评估环境能量，给出最适合的改善方案。</p>
-                        <div class="english-note">
-                            On-site Feng Shui evaluation and layout recommendations by our masters.
-                        </div>
-                        <p>服务流程：预约谘询 → 实地考察 → 分析报告 → 布局建议 → 后续跟进</p>
-                    </div>
-                </div>
-                
-                <div class="content-block reverse">
-                    <div class="content-image">
-                        <img src="online.jpg" alt="线上服务">
-                    </div>
-                    <div class="content-text">
-                        <h3>线上服务</h3>
-                        <p>通过视频会议或电子邮件提供远程风水谘询和命理分析服务。线上服务适合无法实地见面的客户，同样能提供专业的建议和指导。</p>
-                        <div class="english-note">
-                            Remote Feng Shui and destiny consultation via video call or email.
-                        </div>
-                        <p>服务流程：预约谘询 → 提供资料 → 线上会议 → 报告发送 → 后续问答</p>
-                    </div>
-                </div>
-                
-                <div class="content-block">
-                    <div class="content-image">
-                        <img src="contact us.jpg" alt="联络预约">
-                    </div>
-                    <div class="content-text">
-                        <h3>联络预约</h3>
-                        <p>请通过以下方式联系我们预约服务。我们将根据您的需求安排最适合的风水师或命理师为您服务。</p>
-                        <div class="english-note">
-                            Contact us to make an appointment for our services.
-                        </div>
-                        <p>预约方式：WhatsApp、电子邮件、社交媒体私讯</p>
-                        <p>服务时间：周一至周日 10:00-18:00（需提前预约）</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://wa.me/6597287886"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://youtube.com/@infinitygroupconsulting?si=u_bEQU9BysFy4xnQ"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.facebook.com/people/Infinity-Group-consulting/61566000188298/"><i class="fab fa-facebook-f"></i></a>
-                <a href="mailto:infinitygroupconsulting@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="copyright">
-                <p>Copyright © 2025 Infinity Group consulting. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // 滚动时导航栏效果
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // 手机版菜单切换
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const nav = document.getElementById('nav');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            const icon = this.querySelector('i');
-            if (nav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else
-
-
+                    <div class="
