@@ -195,22 +195,17 @@
         }
         
         .hero h1 {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 4.5rem;
-            font-weight: 400;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-            opacity: 0.9;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    font-family: 'ZCOOL XiaoWei', serif; /* More traditional font */
+    font-size: 4.5rem;
+    margin-bottom: 10px; /* Tighter spacing */
+    line-height: 1.3;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 10px; /* Consistent single-line spacing */
+    line-height: 1.6;
+}
         
         .cta-button {
             display: inline-block;
@@ -312,7 +307,8 @@
             display: block;
             color: var(--text);
             text-decoration: none;
-            padding: 8px 0;
+            padding: 12px 0;
+            min-height: 44px;
             transition: all 0.3s ease;
             position: relative;
             padding-left: 15px;
@@ -481,6 +477,8 @@
         
         @media (max-width: 768px) {
             nav {
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
                 position: fixed;
                 top: 80px;
                 left: 0;
@@ -620,14 +618,13 @@
 
     <!-- 英雄区域 -->
     <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>20年的风水服务</h1>
-            <p>7306个日子，你问，我答。</p>
-            <p>20 Years of Feng Shui Service</p>
-            <p>7,306 days, you ask, I answer.</p>
-            <a href="#contact" class="cta-button">「选择」询问</a>
-        </div>
-    </section>
+    <div class="container hero-content">
+        <h1>20年的风水服务</h1>
+        <p>7306个日子，你问，我答。</p>
+        <p>20 Years of Feng Shui Service</p> 
+        <p>7,306 days, you ask, I answer.</p>
+    </div>
+</section>
 
     <!-- 宗旨区域 -->
     <section class="mission-section">
@@ -637,24 +634,24 @@
                 <h2 class="section-title">Infinity Feng Shui Philosophy</h2>
             </div>
             <div class="mission-content">
-                <p>风水布局，</p>
-                <p>上选趋吉，次避凶，平则化煞。</p>
-                <p>选好地点，做对装修，择吉进行，择时入伙，择位敲打。</p>
-                <p>你不知道，我让你知道；你不懂选，我教你选。</p>
-                <p>你看不见的「凶」，我「指」你「避」；你要的「吉」，我「点」你「去」。</p>
-                <p>将一切交给「专业」，</p>
-                <p>玄极风水，传统智慧，现代建议，真正服务于您人生中的「专业」。</p>
-                
-                <div class="english-note">
-                    <p>Feng Shui layout,</p>
-                    <p>First choice is to attract good fortune, second is to avoid misfortune, third is to neutralize negative energy.</p>
-                    <p>Choose the right location, do the right renovation, select auspicious timing for moving in, and identify the right spots for adjustments.</p>
-                    <p>What you don't know, I'll help you understand; what you can't choose, I'll guide you to select.</p>
-                    <p>The "misfortune" you can't see, I'll "point" for you to "avoid"; the "fortune" you seek, I'll "direct" you to "pursue".</p>
-                    <p>Leave everything to "professionalism",</p>
-                    <p>Infinity Feng Shui - traditional wisdom, modern advice, truly serving the "professionalism" in your life.</p>
-                </div>
-            </div>
+    <p>风水布局，</p>
+    <p>上选趋吉，次避凶，平则化煞。</p>
+    <p>选好地点，做对装修，择吉进行，择时入伙，择位敲打。</p>
+    <p>你不知道，我让你知道；你不懂选，我教你选。</p>
+    <p>你看不见的「凶」，我「指」你「避」；你要的「吉」，我「点」你「去」。</p>
+    <p>将一切交给「专业」，</p>
+    <p>玄极风水，传统智慧，现代建议，真正服务于您人生中的「专业」。</p>
+    
+    <div class="english-note">
+        <p>Feng Shui layout,</p>
+        <p>First choice is to attract good fortune, second is to avoid misfortune, third is to neutralize negative energy.</p>
+        <p>Choose the right location, do the right renovation, select auspicious timing for moving in, and identify the right spots for adjustments.</p>
+        <p>What you don't know, I'll help you understand; what you can't choose, I'll guide you to select.</p>
+        <p>The "misfortune" you can't see, I'll "point" for you to "avoid"; the "fortune" you seek, I'll "direct" you to "pursue".</p>
+        <p>Leave everything to "professionalism",</p>
+        <p>Infinity Feng Shui - traditional wisdom, modern advice, truly serving the "professionalism" in your life.</p>
+    </div>
+</div>
             
             <!-- 服务导航按钮 -->
             <div class="service-nav">
